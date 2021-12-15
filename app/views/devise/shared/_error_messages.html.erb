@@ -3,6 +3,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
+    В вашей форме <%= errors.count %> ошибок
     <ul class="list-unstyled">
       <% resource.errors.full_messages.each do |message| %>
         <li><%= image_tag('triangle-right.svg') %> <%= message %></li>
