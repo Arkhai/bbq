@@ -1,0 +1,31 @@
+<div class="container row">
+  <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+    <h2>Войти в аккаунт</h2>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, 'E-mail' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password,'Пароль' %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me,'Запомнить меня' %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.submit "Вход", class: 'btn btn-info btn-block' %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
