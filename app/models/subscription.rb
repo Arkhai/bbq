@@ -14,6 +14,10 @@ class Subscription < ApplicationRecord
   # Или один email может использоваться только один раз (если анонимная подписка)
   validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
 
+  validates :user_email, exclusion: { in: User.pluck(:email) }, unless: -> { user.present? }
+
+  before_save :event_owner, if: -> { user.present? }
+
   def user_name
     if user.present?
       user.name
@@ -28,5 +32,11 @@ class Subscription < ApplicationRecord
     else
       super
     end
+  end
+
+  private
+
+  def event_owner
+
   end
 end
