@@ -1,18 +1,19 @@
-<%= form_for @user, html: {multipart: true} do |f| %>
-  <%= render partial: 'partials/form_errors', locals: {model: @user} %>
+<%= form_for [@event, comment] do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: comment} %>
 
   <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control' %>
-  </div>
+  <% unless user_signed_in? %>
+    <div class="form-group">
+      <%= f.label :user_name %>
+      <%= f.text_field :user_name, class: 'form-control' %>
+    </div>
+  <% end %>
 
   <div class="actions">
-    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-    или <%= link_to 'вернуться', :back %>
+    <%= f.submit 'Отправить', class: 'btn btn-primary' %>
   </div>
 <% end %>
