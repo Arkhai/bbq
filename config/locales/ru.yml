@@ -19,6 +19,10 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
 
+    subscriptions:
+      emailexist: 'не может быть использован.'
+      eventowner: ', создавший мероприятие не может подписаться'
+
   # Перевод сообщений, которые отправляет контроллер
   controllers:
     events:
