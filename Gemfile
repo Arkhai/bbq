@@ -13,6 +13,8 @@ gem 'webpacker', '~> 5'
 gem 'uglifier'
 gem 'twitter-bootstrap-rails'
 gem 'rails_12factor'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
