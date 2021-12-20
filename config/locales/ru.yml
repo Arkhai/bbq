@@ -1,27 +1,45 @@
 ru:
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены?'
+      blank: 'оставьте пустым, если не хотите менять пароль'
+
   # Перевод моделей
   activerecord:
     # Перевод названия моделей
     models:
       user: 'Пользователь'
       event: 'Событие'
+    errors:
+      models:
+        subscription:
+          attributes:
+            user:
+              error_eventowner: ', создавший мероприятие не может подписаться'
+            user_email:
+              error_emailexist: 'не может быть использован.'
 
     # Перевод названий аттрибутов моделей
     attributes:
       user:
+        user: 'Пользователь'
         email: 'Email'
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'
       event:
         title: 'Название'
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
-
-    subscriptions:
-      emailexist: 'не может быть использован.'
-      eventowner: ', создавший мероприятие не может подписаться'
+      comment:
+        body: 'Комментарий'
+        user_name: 'Имя пользователя'
+      subscription:
+        user: 'Пользователь'
+        user_name: 'Имя пользователя'
+        user_email: 'Email'
 
   # Перевод сообщений, которые отправляет контроллер
   controllers:
@@ -40,18 +58,23 @@ ru:
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
 
-  subscriptions:
-    subscription:
-      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
-
   # Перевод названия приложения и компании-разработчика
   app:
     name: 'Шашлыки'
     company: 'Хороший программист'
 
-  comments:
-    comment:
-    destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+
+  users:
+    user:
+      destroy_confirm: 'Вы уверены, что хотите удалить аккаунт?'
+
+  buttons:
+    back: 'Вернуться'
+    delete: 'Удалить'
+    edit: 'Редактировать'
 
   # Перевод форм слов
   mistake:
