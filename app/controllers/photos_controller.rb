@@ -70,4 +70,5 @@ class PhotosController < ApplicationController
     all_emails.each do |mail|
       EventMailer.photo(event, photo, mail).deliver_now
     end
+  end
 end

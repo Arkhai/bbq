@@ -53,4 +53,5 @@ class CommentsController < ApplicationController
     all_emails.each do |mail|
       EventMailer.comment(event, comment, mail).deliver_now
     end
+  end
 end
