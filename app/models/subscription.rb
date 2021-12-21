@@ -37,7 +37,7 @@ class Subscription < ApplicationRecord
   private
 
   def email_exist
-    errors.add(:user_email, :error_emailexist) if User.find_by email: user_email
+    errors.add(:user_email, :error_emailexist) if User.find_by(email: user_email)
   end
 
   def event_owner
