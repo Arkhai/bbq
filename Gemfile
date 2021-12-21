@@ -15,6 +15,7 @@ gem 'twitter-bootstrap-rails'
 gem 'rails_12factor'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
