@@ -10,6 +10,9 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      comment: 'Комментарий'
+      subscription: 'Подписка'
+      photo: 'Фотография'
     errors:
       models:
         subscription:
@@ -41,6 +44,8 @@ ru:
         user: 'Пользователь'
         user_name: 'Имя пользователя'
         user_email: 'Email'
+      photo:
+        photo: 'Фотография'
 
   # Перевод сообщений, которые отправляет контроллер
   controllers:
