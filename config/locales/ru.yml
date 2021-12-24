@@ -87,16 +87,22 @@ ru:
     edit: 'Редактировать'
 
   event_mailer:
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
     comment:
       title: 'Новый комментарий'
       author: 'Автор'
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
-    subscription:
-      title: 'Новая подписка'
-      name: 'Имя'
-      email: 'Email'
+    photo:
+      title: 'Новая фотография'
       author: 'Автор'
       event: 'Событие'
       datetime: 'Состоится'
