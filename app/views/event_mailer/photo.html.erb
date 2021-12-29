@@ -1,5 +1,5 @@
 <h1><%= t '.title' %></h1>
-<%=  image_tag attachments["#{@photo.photo.filename}"].url %>
+<p><%= image_tag(@photo.photo.thumb.file.file) %></p>
 <p><%= t '.author' %>: <strong><%= @photo.user.name %></strong></p>
 
 <hr/>
