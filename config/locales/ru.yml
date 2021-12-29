@@ -93,19 +93,19 @@ ru:
       email: 'Email'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Состоится'
+      datetime: 'Дата и время'
       owner: 'Организатор'
     comment:
       title: 'Новый комментарий'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Состоится'
+      datetime: 'Дата и время'
       owner: 'Организатор'
     photo:
       title: 'Новая фотография'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Состоится'
+      datetime: 'Дата и время'
       owner: 'Организатор'
 
   # Перевод форм слов
