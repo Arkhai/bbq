@@ -29,7 +29,7 @@
   <!-- Size should be 32 x 32 pixels -->
   <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-  <%= javascript_include_tag "https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=3a80829a-3bfd-4126-bc3c-6c33aa4be4c0" %>
+  <%= javascript_include_tag "https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=#{ENV['YANDEX_MAP']}" %>
   <%= javascript_include_tag "application" %>
 
 
