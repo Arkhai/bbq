@@ -18,23 +18,23 @@ class PhotosController < ApplicationController
     if @new_photo.save
       notify_subscribers(@event, @new_photo)
       # Если фотографию удалось сохранить, редирект на событие с сообщением
-      redirect_to @event, notice: I18n.t('controllers.photos.created')
+      redirect_to @event, notice: t('controllers.photos.created')
     else
       # Если фотографию не удалось сохранить, рендер события с ошибкой
-      render 'events/show', alert: I18n.t('controllers.photos.error')
+      render 'events/show', alert: t('controllers.photos.error')
     end
   end
 
   # Действие для удаления фотографии
   def destroy
-    message = {notice: I18n.t('controllers.photos.destroyed')}
+    message = {notice: t('controllers.photos.destroyed')}
 
     # Проверяем, может ли пользователь удалить фотографию
     # Если может — удаляем, нет, меняем сообщение
     if current_user_can_edit?(@photo)
       @photo.destroy
     else
-      message = {alert: I18n.t('controllers.photos.error')}
+      message = {alert: t('controllers.photos.error')}
     end
 
     # И в любом случае редиректим его на событие
