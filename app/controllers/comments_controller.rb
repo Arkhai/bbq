@@ -11,20 +11,20 @@ class CommentsController < ApplicationController
     if @new_comment.save
       notify_subscribers(@event, @new_comment)
       # Если сохранился, редирект на страницу самого события
-      redirect_to @event, notice: I18n.t('controllers.comments.created')
+      redirect_to @event, notice: t('controllers.comments.created')
     else
       # Если ошибки — рендерим здесь же шаблон события (своих шаблонов у коммента нет)
-      render 'events/show', alert: I18n.t('controllers.comments.error')
+      render 'events/show', alert: t('controllers.comments.error')
     end
   end
 
   def destroy
-    message = {notice: I18n.t('controllers.comments.destroyed')}
+    message = {notice: t('controllers.comments.destroyed')}
 
     if current_user_can_edit?(@comment)
       @comment.destroy!
     else
-      message = {alert: I18n.t('controllers.comments.error')}
+      message = {alert: t('controllers.comments.error')}
     end
 
     redirect_to @event, message
@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
 
   def notify_subscribers(event, comment)
     # Собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq.select{ |mail| mail != comment.user.email }
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq.reject{ |mail| mail == comment.user.try(:email) }
 
     # По адресам из этого массива делаем рассылку
     # Как и в подписках, берём EventMailer и его метод comment с параметрами
