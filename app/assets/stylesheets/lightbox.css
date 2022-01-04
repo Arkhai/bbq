@@ -18,8 +18,8 @@ body.lb-disable-scrolling {
     left: 0;
     width: 100%;
     z-index: 10000;
-    text-align: center;
-    line-height: 0;
+    text-align: left;
+    line-height: 1.4;
     font-weight: normal;
     outline: none;
 }
@@ -32,7 +32,7 @@ body.lb-disable-scrolling {
     border-radius: 3px;
 
     /* Image border */
-    border: 4px solid white;
+    border: 10px solid white;
 }
 
 .lightbox a img {
@@ -78,7 +78,7 @@ body.lb-disable-scrolling {
 
 .lb-nav {
     position: absolute;
-    top: 0;
+    top: 40px;
     left: 0;
     height: 100%;
     width: 100%;
@@ -171,6 +171,11 @@ body.lb-disable-scrolling {
 
 .lb-data .lb-caption a {
     color: #4ae;
+}
+
+.lb-details p {
+    margin: 10px 10px 0 10px;
+    padding-top: 15px;
 }
 
 .lb-data .lb-number {

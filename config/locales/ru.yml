@@ -1,8 +1,11 @@
 ru:
   comments:
     comment:
-      destroy_confirm: 'Вы уверены?'
+      destroy_confirm: 'Вы уверены, что хотите удалить комментарий?'
       blank: 'оставьте пустым, если не хотите менять пароль'
+  photos:
+    photo:
+      destroy_confirm: 'Вы уверены, что хотите удалить фотографию?'
 
   # Перевод моделей
   activerecord:

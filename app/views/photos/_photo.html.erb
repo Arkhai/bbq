@@ -1,10 +1,15 @@
 <%# Паршал для вывода отдельной фотографии %>
-<div class="event-photo buffer-both">
+<div class="event-photo">
 
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
-    lightbox: @event.id, title: photo.photo
+  <%= link_to image_tag(photo.photo.thumb.url, class: "photo buffer-both"), photo.photo.url, data: {
+    lightbox: @event.id, gallery: "event-gallery", target: "_blank",
+    title: "Добавил #{render partial: 'users/user', object: photo.user}"
   } %>
 
-  <%# Показываем не только фотку, но и юзаре, который её добавил %>
-  Добавил <%= render partial: 'users/user', object: photo.user %>
+  <% if current_user_can_edit?(photo) %>
+    <%= link_to(
+          fa_icon('trash'), event_photo_path(photo.event, photo),
+          method: :delete, data: {confirm: t('.destroy_confirm')}
+        ) %>
+  <% end %>
 </div>
