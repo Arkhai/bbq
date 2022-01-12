@@ -1,4 +1,4 @@
-if (document.getElementById('map')) ymaps.ready(init);
+ymaps.ready(init);
 var myMap;
 
 function init(){

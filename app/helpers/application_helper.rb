@@ -42,4 +42,8 @@ module ApplicationHelper
   def fa_icon(icon_class)
     content_tag 'span', '', class: "fa fa-#{icon_class}"
   end
+
+  def javascript(*files)
+    content_for(:head) { javascript_include_tag(*files) }
+  end
 end
