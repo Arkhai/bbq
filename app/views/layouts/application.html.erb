@@ -7,7 +7,7 @@
   <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
   <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_pack_tag "application", :media => "all" %>
 
   <!-- For third-generation iPad with high-resolution Retina display: -->
   <!-- Size should be 144 x 144 pixels -->
@@ -30,14 +30,9 @@
   <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
   <%= javascript_include_tag "https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=#{ENV['YANDEX_MAP']}" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_pack_tag "application" %>
   <%= yield(:head) %>
 
-  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-  <!--[if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
-          type="text/javascript"></script>
-  <![endif]-->
 </head>
 <body>
 <div class="navbar navbar-default navbar-static-top">
@@ -62,7 +57,14 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-9">
-      <%= bootstrap_flash %>
+      <% if flash.any? %>
+        <% flash.each do |name, message| %>
+          <div class="alert alert-<%= flash_class_name(name) %> alert-dismissible fade show" role="alert">
+            <%= message %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <% end %>
+      <% end %>
 
       <%= yield %>
     </div>

@@ -78,7 +78,7 @@ body.lb-disable-scrolling {
 
 .lb-nav {
     position: absolute;
-    top: 40px;
+    top: 0;
     left: 0;
     height: 100%;
     width: 100%;

@@ -2,7 +2,7 @@
 <div class="event-photo">
 
   <%= link_to image_tag(photo.photo.thumb.url, class: "photo buffer-both"), photo.photo.url, data: {
-    lightbox: @event.id, gallery: "event-gallery", target: "_blank",
+    lightbox: "roadtrip", gallery: "event-gallery", target: "_blank",
     title: "Добавил #{render partial: 'users/user', object: photo.user}"
   } %>
 

@@ -43,7 +43,11 @@ module ApplicationHelper
     content_tag 'span', '', class: "fa fa-#{icon_class}"
   end
 
-  def javascript(*files)
-    content_for(:head) { javascript_include_tag(*files) }
+  def flash_class_name(name)
+    case name
+    when 'notice' then 'success'
+    when 'alert'  then 'danger'
+    else name
+    end
   end
 end
