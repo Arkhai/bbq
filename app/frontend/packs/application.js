@@ -8,9 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-Rails.start()
-ActiveStorage.start()
-
 import '../styles/application.scss'
 const images = require.context('../images', true)
 
@@ -18,3 +15,6 @@ import 'bootstrap/dist/js/bootstrap'
 import '../scripts/event_map.js'
 import 'lightbox2/dist/js/lightbox-plus-jquery'
 import "@fortawesome/fontawesome-free/css/all"
+
+Rails.start()
+ActiveStorage.start()
