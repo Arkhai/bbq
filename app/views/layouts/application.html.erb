@@ -40,14 +40,14 @@
     <%# Для вывода названия приложения используем хелпер I18n.t %>
     <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
 
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav">
+    <div class="">
+      <ul class="nav nav-pills nav-justified">
         <% if user_signed_in? %>
-          <li><%= link_to 'Профиль', current_user %></li>
-          <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+          <li><%= link_to 'Профиль', current_user, class: 'nav-link' %></li>
+          <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete, class: 'nav-link' %></li>
         <% else %>
-          <li><%= link_to 'Войти', new_user_session_path %></li>
-          <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+          <li><%= link_to 'Войти', new_user_session_path, class: 'nav-link' %></li>
+          <li><%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link' %></li>
         <% end %>
       </ul>
     </div>
