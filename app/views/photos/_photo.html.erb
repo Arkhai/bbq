@@ -1,7 +1,7 @@
 <%# Паршал для вывода отдельной фотографии %>
 <div class="event-photo">
 
-  <% photo_title = "Добавил #{render partial: 'users/user', object: photo.user}" %>
+  <% photo_title = "#{t('.added')} #{render partial: 'users/user', object: photo.user}" %>
   <% if current_user_can_edit?(photo) %>
     <% photo_title << link_to(
           fa_icon('trash'), event_photo_path(photo.event, photo),
@@ -10,7 +10,7 @@
   <% end %>
 
   <%= link_to image_tag(photo.photo.thumb.url, class: "photo buffer-both"), photo.photo.url, data: {
-    lightbox: "roadtrip", gallery: "event-gallery", target: "_blank",
+    lightbox: "event-gallery",
     title: photo_title
   } %>
 </div>

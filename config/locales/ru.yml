@@ -6,6 +6,7 @@ ru:
   photos:
     photo:
       destroy_confirm: 'Вы уверены, что хотите удалить фотографию?'
+      added: 'Добавил'
 
   # Перевод моделей
   activerecord:
