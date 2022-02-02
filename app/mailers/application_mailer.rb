@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'info@bbq-everyday.herokuapp.com'
+  default from: ENV["MAILJET_SENDER"]
   layout 'mailer'
 end

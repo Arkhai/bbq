@@ -7,14 +7,10 @@ gem 'carrierwave'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'fog-aws'
-#gem 'jquery-rails'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'rails_12factor'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'rmagick'
-#gem 'sass-rails', '>= 6'
-#gem 'twitter-bootstrap-rails'
-#gem 'uglifier'
 gem 'webpacker', '~> 5'
 
 
@@ -31,6 +27,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'mailjet'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
