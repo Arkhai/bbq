@@ -120,7 +120,7 @@ Rails.application.configure do
   #
   # Базовый URL сайта для правильных ссылок в письмах
   # ПРОПИСЫВАЙТЕ свой!
-  config.action_mailer.default_url_options = { host: 'bbq-everyday.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'bbq-everyday.ru' }
 
   # Ошибки рассылки юзеру не показываем
   config.action_mailer.raise_delivery_errors = false
