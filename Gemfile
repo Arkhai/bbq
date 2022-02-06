@@ -20,6 +20,12 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+
   gem 'listen'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'web-console', '>= 4.1.0'
