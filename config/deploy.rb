@@ -1,11 +1,12 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.16.0"
+lock '~> 3.16.0'
 
-set :application, "bbq-everyday"
-set :repo_url, "git@github.com:Arkhai/bbq.git"
+set :application, 'bbq-everyday'
+set :repo_url, 'git@github.com:Arkhai/bbq.git'
 
 # Папка, где будет храниться приложение
 set :deploy_to, '/home/deploy/www'
+set :branch, 'main'
 
 # Файлы, которые лежат вне репозитория
 append :linked_files, 'config/database.yml', 'config/secrets.yml'
