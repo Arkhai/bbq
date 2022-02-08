@@ -1,4 +1,8 @@
 class EventPolicy < ApplicationPolicy
+  def show?
+    true
+  end
+
   def create?
     user.present?
   end
@@ -20,6 +24,6 @@ class EventPolicy < ApplicationPolicy
   private
 
   def user_is_owner?(event)
-    user.present? && (event&(:user) == user)
+    user.present? && event&.user == user
   end
 end
