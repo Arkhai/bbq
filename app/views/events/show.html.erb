@@ -18,7 +18,7 @@
             <p><%= @event.description %></p>
           </div>
 
-          <% if current_user_can_edit?(@event) %>
+          <% if policy(Event).create? %>
             <div class="buffer-both">
               <%= link_to 'Изменить', edit_event_path(@event),
                           class: 'btn btn-primary' %>
@@ -78,7 +78,7 @@
       </div>
       <% end %>
 
-      <% unless current_user_can_edit?(@event) || @event.subscribers.include?(current_user) %>
+      <% unless policy(Event).create? || @event.subscribers.include?(current_user) %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
           <div>
