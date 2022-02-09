@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_can_edit?
 
+  def pundit_user
+    UserContext.new(current_user, cookies)
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(
       :sign_up,

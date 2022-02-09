@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe EventPolicy do
-  let(:user) { FactoryBot.create(:user) }
-  let(:user_owner) { FactoryBot.create(:user) }
+  let(:user) { FactoryBot.create(:user, UserContext.new(cookies: {})) }
+  let(:user_owner) { FactoryBot.create(:user, UserContext.new(cookies: {})) }
   let(:event) { FactoryBot.create(:event, user: user_owner) }
+  let(:event_with_pin) { FactoryBot.create(:event, user: user_owner, pincode: '1111') }
 
   # объект тестирования (политика)
   subject { EventPolicy }
@@ -16,6 +17,7 @@ RSpec.describe EventPolicy do
         end
       end
     end
+
 
     context 'and authorized' do
       permissions :show? do

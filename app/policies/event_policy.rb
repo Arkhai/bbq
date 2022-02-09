@@ -1,6 +1,6 @@
 class EventPolicy < ApplicationPolicy
   def show?
-    true
+    user_has_access?(record)
   end
 
   def create?
@@ -25,5 +25,11 @@ class EventPolicy < ApplicationPolicy
 
   def user_is_owner?(event)
     user.present? && event&.user == user
+  end
+
+  def user_has_access?(event)
+    event.pincode.blank? ||
+    (user.present? && event.user == user) ||
+    event.pincode_valid?(cookies["events_#{event.id}_pincode"])
   end
 end
