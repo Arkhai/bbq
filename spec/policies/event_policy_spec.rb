@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe EventPolicy do
   let(:guest) { UserContext.new(nil, cookies: {}) }
-  let(:guest_with_pin) { UserContext.new(nil, cookies: cookies) }
+  let(:guest_with_pin) { UserContext.new(nil, cookies) }
   let(:user) { UserContext.new(FactoryBot.create(:user), cookies: {}) }
-  let(:user_with_pin) { UserContext.new(FactoryBot.create(:user), cookies: cookies) }
+  let(:user_with_pin) { UserContext.new(FactoryBot.create(:user), cookies) }
   let(:user_owner) { UserContext.new(FactoryBot.create(:user), cookies: {}) }
   let(:event) { FactoryBot.create(:event, user: user_owner.user) }
   let(:event_with_pin) { FactoryBot.create(:event, user: user_owner.user, pincode: '1111') }
