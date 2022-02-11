@@ -9,7 +9,8 @@ class CommentsController < ApplicationController
     @new_comment.user = current_user
 
     if @new_comment.save
-      notify_subscribers(@event, @new_comment)
+      SendNotificationsJob.perform_later(@new_comment, 'comment')
+      # notify_subscribers(@event, @new_comment)
       # Если сохранился, редирект на страницу самого события
       redirect_to @event, notice: t('controllers.comments.created')
     else

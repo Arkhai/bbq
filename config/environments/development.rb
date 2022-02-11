@@ -74,18 +74,11 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.active_job.queue_adapter = :async
+  # Префикс для имени очередей
+  config.active_job.queue_name_prefix = "bbq-everyday_#{Rails.env}"
 
   # отправка почты по протоколу SMTP
-  config.action_mailer.delivery_method = :smtp
-
-  # Настройки для работы через GMail аккаунт
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: '587',
-    user_name: ENV['GMAIL_USERNAME'],
-    password: ENV['GMAIL_PASSWORD'],
-    authentication: 'plain',
-    enable_starttls_auto: true
-  }
+  config.action_mailer.delivery_method = :letter_opener
 end
