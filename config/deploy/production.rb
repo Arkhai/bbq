@@ -11,7 +11,7 @@ server 'bbq-everyday.ru', user: 'deploy', roles: %w[app db web resque_worker]
 
 # При запуске воркера загружать Rails приложение
 set :resque_environment_task, true
-# Будет запущен один воркер, обслуживающий очереди с именем "tubilinkz*"
+# Будет запущен один воркер, обслуживающий очереди с именем "bbq-everyday*"
 set :workers, { "#{fetch(:application)}*" => 1 }
 
 # role-based syntax
