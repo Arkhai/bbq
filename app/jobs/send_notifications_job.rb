@@ -7,11 +7,11 @@ class SendNotificationsJob < ApplicationJob
 
     case model
     when Comment
-      all_emails.each { |mail| EventMailer.comment(model, mail).deliver_later } if model == Comment
+      all_emails.each { |mail| EventMailer.comment(model, mail).deliver_later }
     when Photo
-      all_emails.each { |mail| EventMailer.photo(model, mail).deliver_later } if model == Photo
+      all_emails.each { |mail| EventMailer.photo(model, mail).deliver_later }
     when Subscription
-      EventMailer.subscription(model).deliver_later if model == Subscription
+      EventMailer.subscription(model).deliver_later
     end
   end
 end
