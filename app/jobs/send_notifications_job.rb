@@ -3,7 +3,7 @@ class SendNotificationsJob < ApplicationJob
 
   def perform(model)
     event = model.event
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq # - [model.user&.email]
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq - [model.user&.email]
 
     case model
     when Comment
