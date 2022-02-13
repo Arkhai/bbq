@@ -16,7 +16,7 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
-      SendNotificationsJob.perform_later(@new_photo, 'photo')
+      SendNotificationsJob.perform_later(@new_photo)
       # Если фотографию удалось сохранить, редирект на событие с сообщением
       redirect_to @event, notice: t('controllers.photos.created')
     else
