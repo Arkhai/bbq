@@ -14,37 +14,38 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  def self.find_from_oauth(access_token)
-    email = access_token.info.email
+  class << self
+    def find_from_oauth(access_token)
+      find_create_user(access_token)
+    end
 
-    redirect_to "/users/auth/facebook?auth_type=rerequest&scope=email" if email.blank?
+    private
 
-    user = where(email: email).first
+    def find_create_user(access_token)
+      email = access_token.info.email
 
-    return user if user.present?
+      return if email.blank?
 
-    provider = access_token.provider
-    uid = access_token.uid
+      user = where(email: email).first
 
-    user = find_or_initialize_by(provider: provider, url: uid)
-    user.email = email
-    user.password = Devise.friendly_token[0, 20]
+      return user if user.present?
 
-    user.name =
-      case provider
-      when 'facebook' then access_token.info.name
-      when 'vkontakte' then access_token.info.first_name
-      end
+      provider = access_token.provider
+      uid = access_token.uid
 
-    user.save
-    user
-    # Теперь ищем в базе запись по провайдеру и урлу
-    # Если есть, то вернётся, если нет, то будет создана новая
-    # where(url: url, provider: provider).first_or_create! do |user|
-      # Если создаём новую запись, прописываем email и пароль
-    #   user.email = email
-    #   user.password = Devise.friendly_token.first(16)
-    # end
+      user = find_or_initialize_by(provider: provider, url: uid)
+      user.email = email
+      user.password = Devise.friendly_token[0, 20]
+
+      user.name =
+        case provider
+        when 'facebook' then access_token.info.name
+        when 'vkontakte' then access_token.info.first_name
+        end
+
+      user.save
+      user
+    end
   end
 
   def send_devise_notification(notification, *args)
