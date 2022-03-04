@@ -1,6 +1,6 @@
 set :stage, "production"
 
-server 'bbq-everyday.ru', user: 'deploy', roles: %w[app db web resque_worker], port: 35000
+server 'bbq-everyday.ru', user: 'deploy', roles: %w[app db web resque_worker]
 
 # При запуске воркера загружать Rails приложение
 set :resque_environment_task, true
