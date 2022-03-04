@@ -7,6 +7,7 @@ gem 'carrierwave'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'fog-aws'
+gem 'listen'
 gem 'mailjet'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
@@ -37,7 +38,6 @@ group :development do
   gem 'capistrano-ssh-doctor', '~> 1.0'
   gem 'capistrano-yarn',   require: false
   gem 'letter_opener'
-  gem 'listen'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'web-console', '>= 4.1.0'
 end
