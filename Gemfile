@@ -34,6 +34,8 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-resque', require: false
+  gem 'capistrano-ssh-doctor', '~> 1.0'
+  gem 'capistrano-yarn',   require: false
   gem 'letter_opener'
   gem 'listen'
   gem 'rack-mini-profiler', '~> 2.0'

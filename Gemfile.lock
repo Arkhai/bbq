@@ -87,6 +87,10 @@ GEM
       capistrano
       resque
       resque-scheduler
+    capistrano-ssh-doctor (1.0.0)
+      capistrano (>= 3.1)
+    capistrano-yarn (2.0.2)
+      capistrano (~> 3.0)
     carrierwave (2.2.2)
       activemodel (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -389,6 +393,8 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   capistrano-resque
+  capistrano-ssh-doctor (~> 1.0)
+  capistrano-yarn
   carrierwave
   devise
   dotenv-rails
