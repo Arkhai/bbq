@@ -7,7 +7,6 @@ set :repo_url, 'git@github.com:Arkhai/bbq.git'
 # Папка, где будет храниться приложение
 set :deploy_to, '/home/deploy/www'
 set :branch, 'main'
-set :scm, :git
 
 # Файлы, которые лежат вне репозитория
 append :linked_files, 'config/database.yml', 'config/secrets.yml', '.env'
