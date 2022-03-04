@@ -9,8 +9,8 @@ gem 'dotenv-rails'
 gem 'fog-aws'
 gem 'mailjet'
 gem 'omniauth-facebook'
-gem 'omniauth-vkontakte'
 gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-vkontakte'
 gem 'pundit'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'rails_12factor'
@@ -20,7 +20,7 @@ gem 'rmagick'
 gem 'webpacker', '~> 5'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
@@ -43,6 +43,3 @@ end
 group :production do
   gem 'pg'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
