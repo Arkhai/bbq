@@ -11,8 +11,6 @@ require 'capistrano/passenger'
 require 'capistrano-resque'
 require 'capistrano/ssh_doctor'
 
-require 'sshkit/sudo'
-
 set :rbenv_type, :user
 set :rbenv_ruby, '2.7.3'
 
