@@ -34,8 +34,6 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-resque', require: false
-  gem 'capistrano-ssh-doctor', '~> 1.0'
-  gem 'capistrano-yarn',   require: false
   gem 'letter_opener'
   gem 'listen'
   gem 'rack-mini-profiler', '~> 2.0'
@@ -43,8 +41,8 @@ group :development do
 end
 
 group :production do
-
+  gem 'pg'
 end
-gem 'pg'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
