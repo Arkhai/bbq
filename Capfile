@@ -8,7 +8,6 @@ require "capistrano/rbenv"
 require "capistrano/bundler"
 require 'capistrano/passenger'
 require 'capistrano-resque'
-require 'capistrano/ssh_doctor'
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.7.3'
