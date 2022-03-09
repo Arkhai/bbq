@@ -6,7 +6,6 @@ install_plugin Capistrano::SCM::Git
 require 'capistrano/rails'
 require "capistrano/rbenv"
 require "capistrano/bundler"
-require 'capistrano/yarn'
 require 'capistrano/passenger'
 require 'capistrano-resque'
 require 'capistrano/ssh_doctor'
