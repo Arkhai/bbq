@@ -411,7 +411,6 @@ DEPENDENCIES
   rspec-rails
   shoulda-matchers
   sqlite3 (~> 1.4)
-  tzinfo-data
   web-console (>= 4.1.0)
   webpacker (~> 5)
 
