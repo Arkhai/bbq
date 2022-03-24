@@ -1,4 +1,4 @@
-set :stage, "production"
+set :stage, :production
 
 server 'bbq-everyday.ru', user: 'deploy', roles: %w[app db web resque_worker]
 

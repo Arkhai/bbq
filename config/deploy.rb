@@ -5,7 +5,7 @@ set :application, 'bbq-everyday'
 set :repo_url, 'git@github.com:Arkhai/bbq.git'
 
 # Папка, где будет храниться приложение
-set :deploy_to, '/home/deploy/www'
+set :deploy_to, '/home/deploy/apps/bbq'
 set :branch, 'main'
 
 # Файлы, которые лежат вне репозитория
