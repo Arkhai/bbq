@@ -30,7 +30,6 @@ end
 group :development do
   gem 'capistrano'
   gem 'capistrano-bundler'
-  gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-resque', require: false

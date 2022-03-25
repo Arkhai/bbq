@@ -6,7 +6,6 @@ install_plugin Capistrano::SCM::Git
 require 'capistrano/bundler'
 require 'capistrano/rbenv'
 require 'capistrano/rails'
-require 'capistrano/passenger'
 require 'capistrano-resque'
 
 set :rbenv_type, :user
