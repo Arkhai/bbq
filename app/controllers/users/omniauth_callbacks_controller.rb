@@ -15,7 +15,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.persisted?
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider)
       sign_in_and_redirect @user, event: :authentication
-      # Если неудачно, то выдаём ошибку и редиректим на главную
+      # Если неудачно, то выдаём ошибку и редиректим на главнуюrail
     else
       flash[:error] = I18n.t(
         'devise.omniauth_callbacks.failure',
