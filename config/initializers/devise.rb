@@ -278,7 +278,7 @@ Devise.setup do |config|
 
   config.omniauth :vkontakte, Rails.application.secrets.omniauth_vkontakte_id,
                   Rails.application.secrets.omniauth_vkontakte_secret,
-                  scope: 'email'
+                  scope: 'email', image_size: 'original'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

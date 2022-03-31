@@ -39,14 +39,14 @@ class User < ApplicationRecord
 
       user.name =
         case provider
-        when 'facebook' then access_token.info.name
-        when 'vkontakte' then access_token.info.first_name
+        when :facebook then access_token.info.name
+        when :vkontakte then access_token.info.first_name
         end
 
       user.avatar =
         case provider
-        when 'facebook' then access_token.info.image
-        when 'vkontakte' then access_token.extra.raw_info.photo_400_orig
+        when :facebook then access_token.info.image
+        when :vkontakte then access_token.extra.raw_info.photo_big
         end
 
       user.save
