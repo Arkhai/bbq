@@ -45,8 +45,8 @@ class User < ApplicationRecord
 
       user.avatar =
         case provider
-        when :facebook then MiniMagick::Image.new(access_token.info.image)
-        when :vkontakte then MiniMagick::Image.new(access_token.extra.raw_info.photo_big)
+        when :facebook then access_token.info.image
+        when :vkontakte then access_token.extra.raw_info.photo_big
         end
 
       user.save
