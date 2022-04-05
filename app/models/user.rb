@@ -23,11 +23,9 @@ class User < ApplicationRecord
 
     def find_create_user(access_token)
       email = access_token.info.email
-
       return if email.blank?
 
       user = where(email: email).first
-
       return user if user.present?
 
       provider = access_token.provider
@@ -43,7 +41,7 @@ class User < ApplicationRecord
         when :vkontakte then access_token.info.first_name
         end
 
-      user.avatar =
+      user.remote_avatar_url =
         case provider
         when :facebook then access_token.info.image
         when :vkontakte then access_token.extra.raw_info.photo_big
