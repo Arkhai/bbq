@@ -10,6 +10,8 @@ One can authentificate to the application by e-mail, Vkontakte or Facebook.
 
 Application language is Russian.
 
+Implemented in Ruby 2.7.3, Rails 6.1.4.
+
 ## Launching
 
 * Download or clone repo
