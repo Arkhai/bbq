@@ -1,4 +1,4 @@
-# BBQ-everyday
+_**````# BBQ-everyday
 
 ## Description
 
@@ -44,4 +44,5 @@ rails db:create
 
 ```
 rails db:migrate
-```
+```_**
+````
