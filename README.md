@@ -28,13 +28,18 @@ export MAILJET_SENDER='name@bbq-everyday.ru'
 
 * Use bundler
 
-$ bundle install
+```
+bundle install
+```
 
 * Create database
 
-$ rails db:create
+```
+rails db:create
+```
 
 * Run database migrations
 
-$ rails db:migrate
-
+```
+rails db:migrate
+```
