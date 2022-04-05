@@ -21,7 +21,7 @@
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
     <%= link_to image_tag("#{provider}-icon.svg", class: "#{provider}-icon"),
-                omniauth_authorize_path(resource_name, provider),
+                omniauth_authorize_path(resource_name, provider.to_sym),
                 method: :post %>
   <% end %>
 <% end %>
