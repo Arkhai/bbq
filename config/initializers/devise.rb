@@ -274,11 +274,20 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, Rails.application.secrets.omniauth_facebook_id,
                   Rails.application.secrets.omniauth_facebook_secret,
-                  scope: 'email', image_size: 'large'
+                  {
+                    scope: 'email',
+                    image_size: 'large'
+                  }
 
   config.omniauth :vkontakte, Rails.application.secrets.omniauth_vkontakte_id,
                   Rails.application.secrets.omniauth_vkontakte_secret,
-                  scope: 'email,photos', image_size: 'original_x2'
+                  {
+                    scope: 'email',
+                    image_size: 'original_x2',
+                    lang: 'ru',
+                    https: 1,
+                    redirect_uri: 'https://bbq-everyday.ru/users/auth/vkontakte/callback'
+                  }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
