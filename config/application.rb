@@ -37,8 +37,5 @@ module Bbq
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.action_mailer.delivery_method = :mailjet
-
-    config.logger = Logger.new(STDOUT)
-    config.logger = Log4r::Logger.new("Application Log")
   end
 end
