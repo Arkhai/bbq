@@ -12,6 +12,10 @@ Application language is Russian.
 
 Implemented in Ruby 2.7.3, Rails 6.1.4.
 
+## Demo
+
+https://bbq-everyday.ru
+
 ## Launching
 
 * Download or clone repo
