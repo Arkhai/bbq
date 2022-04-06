@@ -44,7 +44,7 @@ class User < ApplicationRecord
       user.remote_avatar_url =
         case provider
         when :facebook then access_token.info.image
-        when :vkontakte then access_token.extra.raw_info.photo_400_orig
+        when :vkontakte then access_token.extra.raw_info.photo_big
         end
 
       user.save
