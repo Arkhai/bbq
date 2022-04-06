@@ -394,6 +394,7 @@ DEPENDENCIES
   letter_opener
   listen
   mailjet
+  omniauth
   omniauth-facebook
   omniauth-rails_csrf_protection
   omniauth-vkontakte
