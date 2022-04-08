@@ -29,7 +29,7 @@ class EventPolicy < ApplicationPolicy
 
   def user_has_access?(event)
     event.pincode.blank? ||
-    (user.present? && event.user == user) ||
-    event.pincode_valid?(cookies["events_#{event.id}_pincode"])
+      (user.present? && event.user == user) ||
+      event.pincode_valid?(cookies["events_#{event.id}_pincode"])
   end
 end

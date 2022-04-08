@@ -1,3 +1,4 @@
+# Получаем необходимые переменные для запуска рассылки по выбранным пользователям
 class EventMailer < ApplicationMailer
   def subscription(subscription)
     @email = subscription.user_email

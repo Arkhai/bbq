@@ -1,3 +1,4 @@
+# Авторизация через соцсети: фейсбук и вконтакте
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     omniauth_user('facebook')

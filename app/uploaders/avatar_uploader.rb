@@ -1,3 +1,4 @@
+# Загрузка аватара для разных сред
 class AvatarUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -36,11 +37,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # А потом нужно сделать миниатюрную версию 100x100
   version :thumb do
-    process :resize_to_fit => [100, 100]
+    process resize_to_fit: [100, 100]
   end
 
   # Мы разрешаем для загрузки только файлы с расширением картинок
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg gif png]
   end
 end

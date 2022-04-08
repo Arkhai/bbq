@@ -22,7 +22,6 @@ RSpec.describe EventPolicy do
       end
     end
 
-
     context 'and authorized' do
       permissions :show? do
         it 'gives access' do

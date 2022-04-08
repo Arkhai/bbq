@@ -7,7 +7,8 @@ set :branch, 'main'
 
 # Файлы, которые лежат вне репозитория
 append :linked_files, 'config/database.yml', 'config/secrets.yml', '.env'
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle',
+       '.bundle', 'public/system', 'public/uploads'
 
 after 'deploy:restart', 'resque:restart'
 # Only keep the last 5 releases to save disk space

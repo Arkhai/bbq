@@ -1,9 +1,10 @@
+# Добавление и удаление фотографий к событию
 class PhotosController < ApplicationController
   # Для каждого действия нужно получить событие, к которому привязана фотография
-  before_action :set_event, only: [:create, :destroy]
+  before_action :set_event, only: %i[create destroy]
 
   # Для действия destroy нужно получить из базы саму фотографию
-  before_action :set_photo, only: [:destroy]
+  before_action :set_photo, only: %i[destroy]
 
   # Действие для создания новой фотографии
   # Обратите внимание, что фотку может сейчас добавить даже неавторизованный пользовать
@@ -27,14 +28,14 @@ class PhotosController < ApplicationController
 
   # Действие для удаления фотографии
   def destroy
-    message = {notice: t('controllers.photos.destroyed')}
+    message = { notice: t('controllers.photos.destroyed') }
 
     # Проверяем, может ли пользователь удалить фотографию
     # Если может — удаляем, нет, меняем сообщение
     if current_user_can_edit?(@photo)
       @photo.destroy
     else
-      message = {alert: t('controllers.photos.error')}
+      message = { alert: t('controllers.photos.error') }
     end
 
     # И в любом случае редиректим его на событие
@@ -42,6 +43,7 @@ class PhotosController < ApplicationController
   end
 
   private
+
   # Так как фотография — вложенный ресурс, то в params[:event_id] рельсы
   # автоматически положает id события, которому принадлежит фотография
   # найденное событие будет лежать в переменной контроллера @event

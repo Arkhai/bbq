@@ -1,14 +1,15 @@
+# Пользователь, валидации и связи, авторизация с фб и вк
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook, :vkontakte]
+         :omniauthable, omniauth_providers: %i[facebook vkontakte]
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :photos, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
 
-  validates :name, presence: true, length: {maximum: 35}
+  validates :name, presence: true, length: { maximum: 35 }
 
   after_commit :link_subscriptions, on: :create
 

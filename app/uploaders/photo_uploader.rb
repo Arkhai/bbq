@@ -1,3 +1,4 @@
+# Загрузка фотографий для разных сред
 class PhotoUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -29,11 +30,11 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # А потом нужно сделать миниатюрную версию 100x100
   version :thumb do
-    process :resize_to_fit => [100, 100]
+    process resize_to_fit: [100, 100]
   end
 
   # Мы разрешаем для загрузки только картинки
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg gif png]
   end
 end

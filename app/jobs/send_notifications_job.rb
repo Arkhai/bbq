@@ -1,3 +1,4 @@
+# Рассылает письма подписанным на событие пользователям о добавлении новой подписки, комментария, фотографии
 class SendNotificationsJob < ApplicationJob
   queue_as :default
 

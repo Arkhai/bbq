@@ -1,3 +1,4 @@
+# Хелперы для вывода автары, миниатюры пользователей, фотографий события
 module ApplicationHelper
   def user_avatar(user)
     if user.avatar?

@@ -1,10 +1,11 @@
+# Добавление, редактирование, удаление событий, установка пин-кода на побытие
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
-  #before_action :password_guard!, only: [:show]
+  before_action :authenticate_user!, except: %i[show index]
+  before_action :set_event, only: %i[show edit update destroy]
+  # before_action :password_guard!, only: [:show]
 
   # Предохранитель от потери авторизации в нужных экшенах
-  after_action :verify_authorized, except: [:show, :index]
+  after_action :verify_authorized, except: %i[show index]
 
   # GET /events
   def index
@@ -19,7 +20,7 @@ class EventsController < ApplicationController
 
     begin
       authorize @event
-      rescue Pundit::NotAuthorizedError
+    rescue Pundit::NotAuthorizedError
       flash.now[:alert] = t('controllers.events.wrong_pincode') if params[:pincode].present?
       render 'password_form'
     end
@@ -75,6 +76,7 @@ class EventsController < ApplicationController
   end
 
   private
+
   def set_event
     @event = Event.find(params[:id])
   end

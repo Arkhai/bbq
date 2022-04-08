@@ -1,3 +1,4 @@
+# Фотографии, валидации и связи
 class Photo < ApplicationRecord
   belongs_to :event
   belongs_to :user
@@ -8,5 +9,5 @@ class Photo < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  scope :persisted, -> { where "id IS NOT NULL" }
+  scope :persisted, -> { where 'id IS NOT NULL' }
 end
