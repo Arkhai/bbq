@@ -1,4 +1,8 @@
-_**````# BBQ-everyday
+# BBQ-everyday
+
+## Demo
+
+[bbq-everyday.ru](https://bbq-everyday.ru)
 
 ## Description
 
@@ -12,41 +16,71 @@ Application language is Russian.
 
 Implemented in Ruby 2.7.3, Rails 6.1.4.
 
-## Demo
-
-https://bbq-everyday.ru
 
 ## Launching
 
 * Download or clone repo
-
-* Create credentials as in example
-```azure
-S3_ACCESS_KEY='SGJHRADGJHCEUV'
-S3_SECRET_KEY='6546DZGDR5HD4HR5F'
-S3_REGION='eu-north-1'
-S3_BUCKET_NAME='bbq-everyday-bucket'
-export YANDEX_MAP='6464HEDHR4TDFH5D5T'
-export MAILJET_API_KEY='ZTG5GT45H4TYF5XK4JF5Y'
-export MAILJET_SECRET_KEY='g5xjg5fxn4f5hbfd'
-export MAILJET_SENDER='name@bbq-everyday.ru'
+```
+git clone git@github.com:Arkhai/bbq.git
 ```
 
-* Use bundler
+* Install gems
 
 ```
 bundle install
 ```
 
-* Create database
+* Install nodejs dependences
 
 ```
-rails db:create
+yarn
 ```
 
-* Run database migrations
+* Create database and run migrations
 
 ```
-rails db:migrate
-```_**
-````
+rails db:create db:migrate
+```
+* Create credentials as in the description below
+
+
+* Start server 
+```
+rails s
+```
+
+* Open web-page
+
+[http://localhost:3000/](http://localhost:3000/)
+
+
+
+## Credentials
+
+* Create credentials as in example in .env file
+```
+S3_ACCESS_KEY=<value>
+S3_SECRET_KEY=<value>
+S3_REGION=<value>
+S3_BUCKET_NAME=<value>
+YANDEX_MAP=<value>
+MAILJET_API_KEY=<value>
+MAILJET_SECRET_KEY=<value>
+MAILJET_SENDER=<value>
+```
+
+* Create credentials as in example in secrets.yaml file
+```
+production:
+    secret_key_base=<value>
+    omniauth_facebook_id=<value>
+    omniauth_facebook_secret=<value>
+    omniauth_vkontakte_id=<value>
+    omniauth_vkontakte_secret=<value>
+```
+To create the bunch of credentials one would need to visit:
+* [Facebook for developers](https://developers.facebook.com/)
+* [Vkontakte for developers](https://dev.vk.com/)
+* [Amazon S3](https://aws.amazon.com/)
+* [Yandex map](https://yandex.ru/dev/maps/?p=realty)
+* [Mailjet](https://www.mailjet.com/)
