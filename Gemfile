@@ -23,6 +23,7 @@ group :development, :test do
   gem 'byebug'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
+  gem 'rubocop', require: false
   gem 'shoulda-matchers'
   gem 'sqlite3', '~> 1.4'
 end
